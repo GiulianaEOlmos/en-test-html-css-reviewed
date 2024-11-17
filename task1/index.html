@@ -1,0 +1,329 @@
+<header class="header">
+  <div class="menu">
+    <!-- Example:
+
+    Well done: using a link for a logo is the right decision!
+    -->
+    <a href=".." class="menu__logo">Explorer</a>
+    <!-- Example:
+
+    Needs correcting: This element should be a button instead of div because user can interact with it.
+    -->
+    <div class="menu__mobile" id="mobile-menu"></div>
+    <div class="menu__items-list">
+      <!-- Well done: Highlighting the selected menu item with an appropriate class is a good practice for user navigation. -->
+      <a href=".." class="menu__link menu__link_selected">Home</a>
+      <div class="menu__items-single-item">
+        <!-- Needs correcting: The user's name ("Elise") is currently part of the interactive logout element, which can cause confusion and reduce accessibility. For better clarity and semantic accuracy, the user's name should be displayed outside the interactive element. Additionally, interactive tags like <button> should be used for interactive elements such as the logout action instead of a nested <span>. Replacing the nested <span> with a <button> will improve accessibility and align with semantic HTML best practices. Learn more about proper button usage and accessibility here: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button -->
+        <span class="menu__link menu__link--logged">Elise
+          <span class="menu__logout"></span>
+        </span>
+      </div>
+    </div>
+  </div>
+  <div class="header__title-wrapper">
+    <!-- Well done: Using an h1 as the main title of the page. It improves semantic structure and accessibility. -->
+    <h1 class="header__title">What's going on in the world?</h1>
+    <p class="header__subtitle">
+      <!-- Well done: Good use of bold text for emphasis. -->
+      <b>Find the latest news on any topic and save them in your personal account.</b>
+    </p>
+    <div class="header__form">
+      <!-- Needs correcting: Consider using a <form> element to wrap this input and button for semantic correctness. Forms provide the proper semantic structure for user inputs and actions, making them easier to understand for both developers and assistive technologies. Additionally, forms enable better functionality, such as handling submission events, and ensure proper behavior when pressing the "Enter" key. You can learn more about form elements and their best practices here: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form -->
+      <input class="header__form-input" type="text" name="search" placeholder="Enter topic" required />
+      <!-- Needs correcting: For this interactive element, it is better to use a <button> instead of a <span> to improve semantic accuracy and accessibility. If this element is part of a form, an <input> element with type="submit" could also be used to trigger actions. Using proper interactive tags ensures better functionality and adherence to accessibility standards. Learn more about accessible form elements here: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button -->
+      <span class="button header__button">Search</span>
+    </div>
+  </div>
+</header>
+<section class="preloader">
+  <!-- Well done: Preloader design effectively communicates status with clear icons and messages. -->
+  <div class="preloader__message" id="preloader-searching">
+    <!-- Well done: Good use of <i> tag for icons!!!! :D -->
+    <i class="circle-preloader"></i>
+    <h5 class="preloader__subtitle">Searching for news...</h5>
+  </div>
+  <div class="preloader__message preloader__hide" id="preloader-not-found">
+    <!-- Needs correcting: The alt text "no" is vague. It’s important to use descriptive alt attributes for better accessibility and clarity. Consider describing the purpose of the image. You can refer to this guide for best practices: https://webaim.org/techniques/alttext/. -->
+    <img class="preloader__icon" src="./images/not-found.svg" alt="no" />
+    <h5 class="preloader__title">Nothing found</h5>
+    <h4 class="preloader__subtitle">
+      Sorry, but nothing matched your search terms.
+    </h4>
+  </div>
+</section>
+<main class="results">
+  <h5 class="results__title">Search results</h5>
+  <div class="results__news">
+    <!-- Needs correcting: Just a couple of friendly tips: 
+    - The "href" attribute should not use "#" unless it has a specific JavaScript action tied to it. Using "#" without proper handling can confuse users and cause unnecessary page reloads.
+    - The <a> tag is for links, not for an entire card. It's a good practice to replace this tag with another one.-->
+    <a href="#" class="card">
+      <div class="card__body">
+        <!-- Needs correcting: If the intention is to display an image, it is best practice to use the <img> tag instead of <div>. The <img> tag allows you to include important metadata such as alt text, which improves accessibility and provides descriptive context for users relying on screen readers. Additionally, it ensures the image can be easily indexed by search engines. Learn more about the <img> tag and its attributes here: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img -->
+        <div class="card_image-wrapper">
+          <div class="card_img"></div>
+        </div>
+        <!-- Needs correcting: For better semantic accuracy and browser performance, use a dedicated <i> or <svg> tag for displaying icons instead of a <div>. These tags are specifically designed for icons and are commonly styled using classes (e.g., from libraries like Semantic UI or Font Awesome). This approach enhances semantic correctness, simplifies maintenance, and improves browser optimization. For more information about icon usage and styling with Semantic UI, refer to: https://www.geeksforgeeks.org/semantic-ui-icon-set/ -->
+        <div class="card__icon"></div>
+        <p class="card__warning">Sign in to save articles</p>
+        <div class="card_wrapper">
+          <!-- Example:
+
+          Can be better: There is a special <time> tag for dates.
+          This element is for presenting dates and times in a machine readable format.
+          For example, this can help a user agent offer to add an event to a user's calendar.
+          You can learn more about this tag and its usage here: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time
+          -->
+          <p class="card_date">May 4, 2022</p>
+          <h4 class="card_title">Why do we use it?</h4>
+          <div class="card_text">
+            It is a long established fact that a reader will be distracted by<br />
+            the readable content of a page when looking at its layout. The point<br />
+            of using Lorem Ipsum is that it has a more-or-less normal<br />
+            distribution of letters, as opposed to using 'Content here, content<br />
+            here', making it look like readable English. Many desktop publishing<br />
+            packages and web page editors now use Lorem Ipsum as their default<br />
+            model text, and a search for 'lorem ipsum' will uncover many web<br />
+            sites still in their infancy. Various versions have evolved over the<br />
+            years, sometimes by accident, sometimes on purpose (injected humour<br />
+            and the like).
+          </div>
+        </div>
+      </div>
+      <p class="card_src">lipsum.com</p>
+    </a>
+    <!-- Needs correcting: Considering the corrections below, the same issues apply to the following two cards. -->
+    <!--  1. **Icons**: Replace <div> elements used for icons with dedicated tags like <i> or <svg>. These tags are more semantic, perform better, and are commonly styled using classes from icon libraries (e.g., Font Awesome or Semantic UI). Refer to: https://www.geeksforgeeks.org/semantic-ui-icon-set/.
+          2. **Images**: For displaying images, use the <img> tag instead of <div>. This allows you to include essential metadata like alt text, improving accessibility and SEO. Learn more here: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img.
+          3. **Dates**: Use the <time> tag for dates instead of <p>. This improves semantic accuracy and makes the dates machine-readable. More details: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time.
+          4. **Card Link**: Using a link (<a>) for the entire card is fine, but ensure the href attribute has a meaningful value or is tied to functionality. Avoid href="#" unless there is appropriate JavaScript handling to prevent unnecessary page reloads. -->
+    <a href="#" class="card">
+      <div class="card__body">
+        <div class="card_image-wrapper">
+          <div class="card_img"></div>
+        </div>
+        <div class="card__icon"></div>
+        <p class="card__warning">Sign in to save articles</p>
+        <div class="card_wrapper">
+          <p class="card_date">May 4, 2022</p>
+          <h4 class="card_title">Why do we use it?</h4>
+          <div class="card_text">
+            It is a long established fact that a reader will be distracted by<br />
+            the readable content of a page when looking at its layout. The point<br />
+            of using Lorem Ipsum is that it has a more-or-less normal<br />
+            distribution of letters, as opposed to using 'Content here, content<br />
+            here', making it look like readable English. Many desktop publishing<br />
+            packages and web page editors now use Lorem Ipsum as their default<br />
+            model text, and a search for 'lorem ipsum' will uncover many web<br />
+            sites still in their infancy. Various versions have evolved over the<br />
+            years, sometimes by accident, sometimes on purpose (injected humour<br />
+            and the like).
+          </div>
+        </div>
+      </div>
+      <p class="card_src">lipsum.com</p>
+    </a>
+    <a href="#" class="card">
+      <div class="card__body">
+        <div class="card_image-wrapper">
+          <div class="card_img"></div>
+        </div>
+        <div class="card__icon"></div>
+        <p class="card__warning">Sign in to save articles</p>
+        <div class="card_wrapper">
+          <p class="card_date">May 4, 2022</p>
+          <h4 class="card_title">Why do we use it?</h4>
+          <div class="card_text">
+            It is a long established fact that a reader will be distracted by<br />
+            the readable content of a page when looking at its layout. The point<br />
+            of using Lorem Ipsum is that it has a more-or-less normal<br />
+            distribution of letters, as opposed to using 'Content here, content<br />
+            here', making it look like readable English. Many desktop publishing<br />
+            packages and web page editors now use Lorem Ipsum as their default<br />
+            model text, and a search for 'lorem ipsum' will uncover many web<br />
+            sites still in their infancy. Various versions have evolved over the<br />
+            years, sometimes by accident, sometimes on purpose (injected humour<br />
+            and the like).
+          </div>
+        </div>
+      </div>
+      <p class="card_src">lipsum.com</p>
+    </a>
+    <a href="#" class="card">
+      <div class="card__body">
+        <div class="card_image-wrapper">
+          <div class="card_img"></div>
+        </div>
+        <div class="card__icon"></div>
+        <p class="card__warning">Sign in to save articles</p>
+        <div class="card_wrapper">
+          <p class="card_date">May 4, 2022</p>
+          <h4 class="card_title">Why do we use it?</h4>
+          <div class="card_text">
+            It is a long established fact that a reader will be distracted by<br />
+            the readable content of a page when looking at its layout. The point<br />
+            of using Lorem Ipsum is that it has a more-or-less normal<br />
+            distribution of letters, as opposed to using 'Content here, content<br />
+            here', making it look like readable English. Many desktop publishing<br />
+            packages and web page editors now use Lorem Ipsum as their default<br />
+            model text, and a search for 'lorem ipsum' will uncover many web<br />
+            sites still in their infancy. Various versions have evolved over the<br />
+            years, sometimes by accident, sometimes on purpose (injected humour<br />
+            and the like).
+          </div>
+        </div>
+      </div>
+      <p class="card_src">lipsum.com</p>
+    </a>
+  </div>
+  <button class="button results__button">Show more</button>
+</main>
+<section class="about results__about">
+  <h3 class="about__title">About the author</h3>
+  <div class="about__text">
+    Vivamus sed volutpat odio. Praesent placerat gravida erat, in ornare
+    ex.
+    <br />
+    Nullam vitae tellus euismod, egestas diam vel, maximus orci. Nulla
+    fringilla, enim ut pharetra rhoncus, arcu enim aliquet turpis, ac
+    tempus dolor lacus a velit. Donec semper velit eu volutpat bibendum.
+    <br />
+    In ultricies dolor quis neque pellentesque pharetra. Donec nibh urna,
+    suscipit in feugiat at, facilisis et turpis. Fusce blandit tincidunt
+    libero, sed ornare sapien tincidunt nec. Curabitur quis fermentum
+    felis.
+  </div>
+  <div class="about__text">
+    Quisque urna magna, molestie id nisl vitae, bibendum auctor sem.
+    <br />
+    Aliquam efficitur orci elit, lacinia fringilla nibh aliquet non. Morbi
+    consectetur tincidunt dui in rhoncus. Vestibulum imperdiet luctus
+    sodales. Class aptent taciti sociosqu ad litora torquent per conubia
+    nostra, per inceptos himenaeos. Sed vitae tincidunt sem.
+  </div>
+</section>
+<footer class="footer">
+  <p class="footer__legal">© 2022</p>
+  <!-- Well done: Menu structure with appropriate nesting of list items is clean and accessible. -->
+  <ul class="footer__menu">
+    <li class="footer__menu-item"><a href="..">Home</a></li>
+    <li class="footer__menu-item"><a href="./about/">About</a></li>
+    <li class="footer__menu-item">
+      <a href="https://practicum.com/" target="_blank">Practicum</a>
+    </li>
+  </ul>
+  <!-- Needs correcting: Social icons should be wrapped in a <ul> (unordered list) instead of being placed individually without structure. Using a list provides a semantic grouping of related items, making the code more organized and accessible. Each icon should be within an <li> tag for clarity. This approach also improves maintainability and aligns with best practices. Learn more about semantic HTML and lists here: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul -->
+  <p class="footer__links">
+    <a href="#" class="footer__social-icon" target="_blank">
+      <!-- Needs correcting: Alt text "Logo" is too generic. Alt text should be descriptive and specific to enhance accessibility for users relying on screen readers. In this case, mentioning the company or brand associated with the logo would provide better context. -->
+      <img src="./images/social/git.svg" alt="Logo" />
+    </a>
+    <br />
+    <a href="#" class="footer__social-icon" target="_blank">
+      <img src="./images/social/git.svg" alt="Logo" />
+    </a>
+    <br />
+  </p>
+</footer>
+<!-- Needs correcting: The syntax of an HTML element requires proper opening and closing tags in the correct order. 
+Ensure that every opening tag (<>) has a corresponding closing tag (</>) and that they follow a nested structure. -->
+</div>
+<div id="modal">
+  <!-- Needs correcting: If the main purpose is to show the login, sign-up, or success forms inside the modal, these three sections should be placed within the <div id="modal"> container. This ensures that all related content is grouped logically within the modal, improving maintainability and accessibility. Dynamically toggling the visibility of these sections inside the modal is also easier to manage using JavaScript. -->
+
+  <section class="auth-form__wrapper_hide" id="login-form">
+    <form class="auth-form">
+      <div class="auth-form__close" id="close-login-form"></div>
+      <!-- Needs correcting: We have a typo here :D -->
+      <h4 class="auth-form__title">Sing in</h4>
+      <!-- Needs correcting: Placeholder text is not a replacement for labels. While placeholders provide additional guidance, they disappear once the user starts typing, making it harder for users to recall the purpose of the field. 
+      Adding a <label> element with a "for" attribute improves accessibility by providing a persistent and descriptive reference for all users, including those using screen readers.
+      Learn more about the importance of labels in forms here: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/label -->
+      <!-- This is applicable for all the inputs in the form -->
+      <span class="auth-form__subtitle">E-mail</span>
+      <!-- Needs correcting: Use type="email" instead of type="text" for email inputs to ensure that the browser validates the email format automatically. This helps users enter valid email addresses and reduces errors. Learn more about input types and their appropriate usage here: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/email -->
+      <input class="auth-form__input" type="text" placeholder="Enter email" required>
+      <span class="auth-form__error-message" id="error-email-login">
+        Invalid email address
+      </span>
+      <span class="auth-form__subtitle">Password</span>
+      <!-- Needs correcting: Use type="password" instead of type="text" to secure user input and obscure the characters. This ensures that sensitive information, such as passwords, is not visible while typing, enhancing both security and privacy. Learn more about input types and their appropriate usage here: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/password -->
+      <input class="auth-form__input" type="text" placeholder="Enter password" required>
+      <!-- Needs correcting: Error messages should only be displayed when the input is invalid. Showing error messages prematurely can confuse users. Consider dynamically toggling their visibility using JavaScript, such as adding or removing a "hidden" class or updating the `display` property based on validation results. Learn more about managing form validation here: https://developer.mozilla.org/en-US/docs/Learn/Forms/Form_validation -->
+      <span class="auth-form__error-message auth-form__error-message_hide" id="error-password-login">
+        The field cannot be empty
+      </span>
+      <span class="auth-form__error-message auth-form__error-message_usr-exists" id="error-not-logged">
+        Incorrect login or password
+      </span>
+      <!-- Needs correcting: Since this is a sign-in form, it is recommended to use an <input type="submit"> instead of a <button> for semantic consistency with forms. This provides a straightforward way to submit the form. https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/submit -->
+      <button class="button auth-form__button" name="login-button" disabled>Sign in</button>
+      <span class="auth-form__other-action">
+        or <span class="auth-form__other-action-click" id="open-signup-form">Sign up</span>
+      </span>
+    </form>
+  </section>
+
+  <!-- Needs correcting: The same comments from the previous section regarding the auth form can be applied here. Ensure proper use of semantic elements, such as <label> for inputs, type="password" for sensitive fields, and <button> or <input type="submit"> for form submission. Address accessibility issues and maintain consistency throughout the forms. -->
+  <section class="auth-form__wrapper_hide" id="signup-form">
+    <form class="auth-form">
+      <div class="auth-form__close" id="close-signup-form"></div>
+      <h4 class="auth-form__title">Sign up</h4>
+      <span class="auth-form__subtitle">E-mail</span>
+      <input class="auth-form__input" placeholder="Enter email" type="text" required>
+      <span class="auth-form__error-message auth-form__error-message_hide" id="error-email">Invalid email address</span>
+      <span class="auth-form__subtitle">Password</span>
+      <input class="auth-form__input" type="text" placeholder="Enter password" minlength="8" required>
+      <span class="auth-form__error-message" id="error-password">
+        Password length must be 8 characters or more
+      </span>
+      <span class="auth-form__subtitle">Name</span>
+      <input class="auth-form__input" placeholder="Enter your name" required minlength="2">
+      <span class="auth-form__error-message auth-form__error-message_hide" id="error-name">
+        Enter name
+      </span>
+      <span class="auth-form__error-message auth-form__error-message_usr-exists" id="error-register">
+        This email is not available
+      </span>
+      <button class="button auth-form__button">Sign up</button>
+      <span class="auth-form__other-action">
+        or <span class="auth-form__other-action-click" id="open-login-form">Sign in</span>
+      </span>
+    </form>
+  </section>
+
+  <section class="auth-form__wrapper_hide" id="signup-ok">
+    <form class="auth-form">
+      <div class="auth-form__close" id="close-signup-ok-form"></div>
+      <h4 class="auth-form__title">Registration successfully completed!</h4>
+      <!-- Needs correcting: If this is a form, it is best practice to use an <input type="submit"> element instead of <span> for interactive actions like "Sign in." The <input> element provides better semantic meaning, built-in accessibility features, and default functionality within forms. Replacing the <span> with <input type="submit"> ensures proper behavior, supports screen readers, and improves the overall user experience. Learn more about accessible input usage here: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/submit -->
+      <span class="auth-form__other-action auth-form__other-action_left">
+        <span class="auth-form__other-action-click" id="open-login-modal">Sign in</span>
+      </span>
+    </form>
+  </section>
+
+  <div class="overlay"></div>
+
+  <!-- Comments for Task 2 layout review:
+    Well Done:
+    - The modal structure is well-organized, with separate sections for login, sign-up, and success messages.
+    - The use of <ul> to show links in the footer is a good practice for accessibility and semantic structure.
+    - The use of a modal to show login, sign-up, and success messages is a good design choice for user interaction.
+    - The use of a preloader section to indicate loading status is a good practice for user feedback.
+    Good job!! Keep it up!
+
+    Needs correcting:
+    - When the page starts, the modal with the message is displayed. This can be confusing for users, as they might expect to see the main content first. Consider showing the main content first and then displaying the modal when necessary.
+    - The preloader section should only be visible when the page is actively searching or loading content. Without conditional visibility, this section might display unnecessarily, causing confusion for users. Consider dynamically toggling the visibility of this section using JavaScript, such as adding or removing a "hidden" class or setting the display property. This will ensure a better user experience. Learn more about handling visibility dynamically here: https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/style
+    - The page is having an horizontal scrolling on displays with a width of 320px. This can be fixed by adjusting the layout to fit within the viewport width. Consider using responsive design techniques to ensure the content fits various screen sizes without horizontal scrolling. You can learn more about responsive design here: https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Responsive_Design
+    - When the modal is open, is working well but when the screen is less than 767px the modal is not responsive, and occupied the entire screen. Consider making the modal responsive to different screen sizes to ensure a consistent user experience across devices. 
+    - The icon to save the articles is not responsive and lost the position inside the card. The little message "Sign in to save articles" is not aligned with the icon. Consider adjusting the layout to ensure that icons and text remain properly aligned and responsive across different screen sizes.
+    - The social media icons in the footer are not aligned correctly on smaller devices. Consider adjusting the alignment to ensure a consistent layout across different screen sizes.
+    - The images in the cards should use specification to show to entire image and not only a part of it. Consider using the <img> tag with appropriate attributes, such as width and height, to ensure the images display correctly and maintain their aspect ratio. This will prevent images from being cropped or distorted on different devices. Learn more about image attributes here: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img
+
+    Can be improved:
+    - The "About the author" section could have a different text alignment or spacing to make it more visually appealing and easier to read. Consider adjusting the layout or typography to enhance readability and user experience. You can experiment with different font sizes, line heights, or margins to improve the overall appearance.
+    - The "Show more" button in the results section could be more descriptive. Consider using a more specific label, such as "Load More Articles," to clearly indicate the action users will take. Descriptive labels improve usability and help users understand the purpose of the button.
+  -->
